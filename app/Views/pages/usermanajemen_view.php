@@ -13,6 +13,9 @@
         <?= session()->getFlashdata('failed') ?>
     </div>
 <?php endif; ?>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+Tambah User
+</button>
 <table class="table table-bordered mt-4">
     <thead>
         <tr class="text-center">
@@ -36,16 +39,22 @@
                     <button type="submit" class="btn btn-link border-none">
                         <i class="bi bi-person-x fs-2 text-danger"></i>
                     </button>
+
                 </form>
                 <a href="<?= base_url('users/update/' . $user['id']) ?>">
                     <i class="bi bi-person-check fs-2 text-info"></i>
+                </a>
+                <a href="<?= base_url('users/update/' . $user['id']) ?>">
+                    <i class="bi bi-person-gear fs-2 text-edit"></i>
                 </a>
             </div>
         </td>
     </tr>
     
 <?php endforeach; ?>
-    </tbody>
+</tbody>
 </table>
+
 </div>
+
 <?= $this->endSection() ?>
